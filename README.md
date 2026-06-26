@@ -1,27 +1,29 @@
 # url-to-markdown
 
-MCP 服务器，提取网页内容并转换为干净的 Markdown 格式。
+[中文文档](docs/README.zh-CN.md)
 
-## 功能特性
+An MCP server that extracts web page content from URLs and converts it to clean Markdown.
 
-- 使用 Mozilla Readability 从任意 URL 提取可读内容
-- 使用 Turndown 将 HTML 转换为干净的 Markdown
-- 内置重试逻辑处理瞬时故障
-- SSRF 防护阻止访问私有网络
-- Readability 失败时自动降级提取
+## Features
 
-## 安装
+- Extracts readable content from any URL using Mozilla Readability
+- Converts HTML to clean Markdown via Turndown
+- Built-in retry logic for transient failures
+- SSRF protection blocks access to private networks
+- Automatic fallback extraction when Readability fails
+
+## Installation
 
 ```bash
 pnpm install
 pnpm build
 ```
 
-## 使用方法
+## Usage
 
-### 配合 Claude Desktop
+### With Claude Desktop
 
-在 Claude MCP 配置中添加:
+Add to your Claude MCP configuration:
 
 ```json
 {
@@ -34,21 +36,29 @@ pnpm build
 }
 ```
 
-### 工具: `extract_content`
+### Tool: `extract_content`
 
-从 URL 提取内容并返回 Markdown。
+Extracts content from a URL and returns Markdown.
 
-**参数:**
-- `url` (string, 必填): 要提取内容的 URL（必须以 http:// 或 https:// 开头）
+**Parameters:**
+- `url` (string, required): The URL to extract content from (must start with `http://` or `https://`)
 
-**返回:** Markdown 内容或错误信息。
+**Returns:** Markdown content or an error message.
 
-## 开发
+## Development
 
-```bash
-pnpm dev        # 监听模式
-pnpm test       # 运行测试
-pnpm build      # 编译 TypeScript
-pnpm lint       # 代码检查
-pnpm format     # 代码格式化
-```
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Watch mode |
+| `pnpm test` | Run tests |
+| `pnpm build` | Build |
+| `pnpm lint` | Lint |
+| `pnpm format` | Format code |
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## License
+
+This project is licensed under the [GNU Lesser General Public License v2.1](LICENSE).
