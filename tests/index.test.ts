@@ -4,10 +4,9 @@ vi.mock('@modelcontextprotocol/sdk/server/mcp.js', () => {
   const tool = vi.fn()
   const connect = vi.fn()
   return {
-    McpServer: vi.fn().mockImplementation(() => ({
-      tool,
-      connect,
-    })),
+    McpServer: vi.fn().mockImplementation(function () {
+      return { tool, connect }
+    }),
   }
 })
 
