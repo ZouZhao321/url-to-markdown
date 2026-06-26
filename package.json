@@ -23,7 +23,8 @@
     "content",
     "extraction"
   ],
-  "license": "MIT",
+  "license": "LGPL-2.1",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
     "node": ">=22.0.0"
   },
