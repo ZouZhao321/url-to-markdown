@@ -9,6 +9,12 @@
 3. **手术刀式修改** — 只动该动的，不改周围代码，不重构未坏之物
 4. **目标驱动** — 先定义验证标准再执行，写 test 复现 bug 再修
 
+## 禁止操作
+
+- **禁止合并 PR** — 只能创建 PR，合并操作必须由用户手动完成
+- **禁止删除 git 分支** — 不得执行 `git branch -D` 或类似删除分支的操作
+- **禁止删除 git worktree** — 不得执行 `git worktree remove` 或类似操作
+
 ## Git 规范
 
 - 提交格式：`type(scope): 中文描述` — 遵循 Conventional Commits
