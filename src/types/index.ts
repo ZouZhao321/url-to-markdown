@@ -5,6 +5,7 @@ export interface ExtractContentParams {
 export interface ExtractContentResult {
   content: Array<{ type: 'text'; text: string }>
   isError?: boolean
+  [x: string]: unknown
 }
 
 export interface RetryConfig {
