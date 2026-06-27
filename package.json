@@ -1,9 +1,15 @@
 {
   "name": "url-to-markdown",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "MCP 服务器，提取网页内容并转换为 Markdown",
   "type": "module",
   "main": "build/index.js",
+  "bin": {
+    "url-to-markdown": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "vite build",
     "start": "node build/index.js",
