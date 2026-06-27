@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import { resolve } from 'node:path'
 
 export default defineConfig({
@@ -12,6 +12,9 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [/node_modules/],
+      output: {
+        banner: '#!/usr/bin/env node',
+      },
     },
     sourcemap: true,
     minify: false,
