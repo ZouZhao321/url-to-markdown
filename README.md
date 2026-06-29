@@ -36,7 +36,7 @@ Add to your Claude MCP configuration:
 }
 ```
 
-### Tool: `extract_content`
+### Tool: `extract`
 
 Extracts content from a URL and returns Markdown.
 

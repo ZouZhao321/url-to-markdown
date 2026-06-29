@@ -49,15 +49,17 @@ describe('searchSogou', () => {
     await expect(searchSogou('test', 1, true)).rejects.toThrow('反爬')
   })
 
-  it('should also throw on antispider in non-strict mode (source always throws)', async () => {
-    // NOTE: source code always throws on antispider detection regardless of strict parameter
+  it('should return empty results on antispider in non-strict mode', async () => {
     vi.mocked(sogouAxios.get).mockResolvedValue({
       status: 200,
       data: '<html>seccoderight</html>',
       url: 'https://weixin.sogou.com/antispider',
     })
 
-    await expect(searchSogou('test', 1, false)).rejects.toThrow('反爬')
+    const result = await searchSogou('test', 1, false)
+    expect(result.results).toEqual([])
+    expect(result.query).toBe('test')
+    expect(result.page).toBe(1)
   })
 
   it('should return empty results on non-200 status', async () => {

@@ -46,7 +46,8 @@ export async function searchSogou(
 
   const html = response.data as string
   if (isAnti(response.url ?? '', html)) {
-    throw new ExtractionError('触发反爬机制，请稍后重试', undefined, false)
+    if (strict) throw new ExtractionError('触发反爬机制，请稍后重试', undefined, false)
+    return { query, page, results: [] }
   }
 
   const dom = new JSDOM(html)

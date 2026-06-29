@@ -36,7 +36,7 @@ pnpm build
 }
 ```
 
-### 工具: `extract_content`
+### 工具: `extract`
 
 从 URL 提取内容并返回 Markdown。
 
