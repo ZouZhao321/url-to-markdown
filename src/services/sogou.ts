@@ -58,7 +58,8 @@ export async function searchSogou(
     let link = el.getAttribute('href') ?? ''
     if (link && !link.startsWith('http')) link = `https://weixin.sogou.com${link}`
 
-    const pubEl = document.querySelector(`li[id^="sogou_vr_11002601_box_"] .txt-box .s-p .s2`)
+    const box = el.closest('li[id^="sogou_vr_11002601_box_"]')
+    const pubEl = box?.querySelector('.txt-box .s-p .s2')
 
     results.push({
       title: el.textContent?.trim() ?? '',
