@@ -45,6 +45,16 @@ Extracts content from a URL and returns Markdown.
 
 **Returns:** Markdown content or an error message.
 
+### Tool: `search`
+
+Search WeChat public account articles.
+
+**Parameters:**
+- `query` (string, required): Search keyword
+- `page` (number, optional): Page number, default 1
+
+**Returns:** Search results list or an error message.
+
 ## Development
 
 | Command | Description |
