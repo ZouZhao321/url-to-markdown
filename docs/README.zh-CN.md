@@ -36,7 +36,7 @@ pnpm build
 }
 ```
 
-### 工具: `extract_content`
+### 工具: `extract`
 
 从 URL 提取内容并返回 Markdown。
 
@@ -44,6 +44,16 @@ pnpm build
 - `url` (string, 必填): 要提取内容的 URL（必须以 http:// 或 https:// 开头）
 
 **返回:** Markdown 内容或错误信息。
+
+### 工具: `search`
+
+搜索微信公众号文章。
+
+**参数:**
+- `query` (string, 必填): 搜索关键词
+- `page` (number, 可选): 页码，默认 1
+
+**返回:** 搜索结果列表或错误消息。
 
 ## 开发
 

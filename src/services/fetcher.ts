@@ -38,3 +38,16 @@ async function doFetch(url: string): Promise<string> {
 export async function fetchUrl(url: string): Promise<string> {
   return withRetry(() => doFetch(url), DEFAULT_RETRY_CONFIG)
 }
+
+const SogouUserAgent =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0'
+
+export const sogouAxios = axios.create({
+  timeout: 15000,
+  headers: {
+    Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+    'User-Agent': SogouUserAgent,
+  },
+  maxRedirects: 5,
+})

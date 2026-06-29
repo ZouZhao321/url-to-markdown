@@ -36,7 +36,7 @@ Add to your Claude MCP configuration:
 }
 ```
 
-### Tool: `extract_content`
+### Tool: `extract`
 
 Extracts content from a URL and returns Markdown.
 
@@ -44,6 +44,16 @@ Extracts content from a URL and returns Markdown.
 - `url` (string, required): The URL to extract content from (must start with `http://` or `https://`)
 
 **Returns:** Markdown content or an error message.
+
+### Tool: `search`
+
+Search WeChat public account articles.
+
+**Parameters:**
+- `query` (string, required): Search keyword
+- `page` (number, optional): Page number, default 1
+
+**Returns:** Search results list or an error message.
 
 ## Development
 
