@@ -7,7 +7,12 @@ import { installSkill } from './commands/init.js'
 
 // CLI init 命令
 if (process.argv[2] === 'init') {
-  installSkill()
+  try {
+    installSkill()
+  } catch (err) {
+    console.error(`错误: ${(err as Error).message}`)
+    process.exit(1)
+  }
   process.exit(0)
 }
 

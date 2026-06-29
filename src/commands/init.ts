@@ -10,8 +10,7 @@ export function installSkill(): void {
   const targetPath = join(targetDir, 'url-to-markdown.md')
 
   if (!existsSync(templatePath)) {
-    console.error('错误: 找不到 skill 模板文件')
-    process.exit(1)
+    throw new Error('找不到 skill 模板文件')
   }
 
   if (!existsSync(targetDir)) {
