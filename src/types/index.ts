@@ -24,3 +24,21 @@ export class ExtractionError extends Error {
     this.name = 'ExtractionError'
   }
 }
+
+export interface SearchResult {
+  title: string
+  link: string
+  publishTime: string
+  page: number
+}
+
+export interface SearchParams {
+  query: string
+  page?: number
+}
+
+export interface SearchResponse {
+  query: string
+  page: number
+  results: SearchResult[]
+}
